@@ -1,0 +1,12 @@
+Downloads Steps on ubuntu:
+There are two deployment mode for the openObserve: single node mode and HA mode
+
+Go to this website: https://openobserve.ai/downloads/
+Run this on the ubuntu terminal: curl -L https://raw.githubusercontent.com/openobserve/openobserve/main/downloadO2.sh | sh -s opensource v0.70.2
+
+Download Complete
+
+Now we can start the openObserve
+export ZO_ROOT_USER_EMAIL=root@example.com
+export ZO_ROOT_USER_PASSWORD=Complexpass#123
+./openobserve
