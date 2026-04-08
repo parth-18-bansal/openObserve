@@ -11,3 +11,41 @@ Now we can start the openObserve
 export ZO_ROOT_USER_EMAIL=root@example.com
 export ZO_ROOT_USER_PASSWORD=Complexpass#123
 ./openobserve
+
+To make the OpenObserve a service:
+sudo mkdir -p /opt/openobserve
+sudo mv openobserve /opt/openobserve/
+sudo chmod +x /opt/openobserve/openobserve
+
+sudo vim /etc/systemd/system/openobserve.service
+
+[Unit]
+Description=OpenObserve Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/openobserve
+ExecStart=/opt/openobserve/openobserve
+Restart=always
+RestartSec=5
+
+EnvironmentFile=/opt/openobserve/.env
+
+[Install]
+WantedBy=multi-user.target
+
+sudo vim /opt/openobserve/.env
+
+ZO_ROOT_USER_EMAIL=root@example.com
+ZO_ROOT_USER_PASSWORD=Complexpass#123
+
+sudo chmod 600 /opt/openobserve/.env
+
+sudo systemctl daemon-reload
+sudo systemctl enable openobserve
+sudo systemctl start openobserve
+sudo systemctl status openobserve
+
+To see the logs:
+journalctl -u openobserve -f
