@@ -46,6 +46,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable openobserve
 sudo systemctl start openobserve
 sudo systemctl status openobserve
+sudo systemctl restart openobserve
 
 To see the logs:
 journalctl -u openobserve -f
+sudo journalctl -u openobserve -n 200 | grep -iE "s3|flush|error|upload|compact"
+sudo journalctl -u openobserve -f | grep -iE "s3|flush|compact|error|start"
