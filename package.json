@@ -1,0 +1,32 @@
+{
+  "name": "openobserve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parth-18-bansal/openObserve.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/parth-18-bansal/openObserve/issues"
+  },
+  "homepage": "https://github.com/parth-18-bansal/openObserve#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@openobserve/pino-openobserve": "^1.0.0",
+    "express": "^5.2.1",
+    "pino": "^10.3.1"
+  }
+}
