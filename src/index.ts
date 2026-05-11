@@ -9,13 +9,15 @@ const logger = pino({
   transport: {
     target: "@openobserve/pino-openobserve",
     options: {
-      url: "https://your-openobserve-server.com",
-      organization: "your-organization",
-      streamName: "your-stream",
+      url: "http://localhost:5080/",
+      organization: "default",
+      streamName: "default",
       auth: {
-        username: "your-username",
-        password: "your-password",
+        username: "root@example.com",
+        password: "Complexpass#123",
       },
+      batchSize: 1,
+      timeThreshold: 15*1000
     },
   },
 });
